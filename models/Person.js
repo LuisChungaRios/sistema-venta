@@ -1,7 +1,7 @@
 import mongoose, {Schema} from "mongoose";
 
-const userSchema = new Schema({
-    rol: {
+const personSchema = new Schema({
+    type_person: {
         type: String,
         maxLength: 30,
         required: true
@@ -18,7 +18,6 @@ const userSchema = new Schema({
     email: {
         type: String,
         maxLength: 60,
-        required: true,
         unique: true
     },
     type_document : {
@@ -37,11 +36,6 @@ const userSchema = new Schema({
         type: String,
         maxLength: 15
     },
-    password: {
-        type: String,
-        maxLength: 64,
-        required: true
-    },
     active: {
         type: Number,
         default: 1
@@ -52,6 +46,6 @@ const userSchema = new Schema({
     }
 });
 
-const User = mongoose.model('user', userSchema);
+const Person = mongoose.model('person', personSchema);
 
-export default User;
+export default Person;
